@@ -44,6 +44,7 @@ class MainActivity: Activity(){
             } else {
                 resultado = 62 - idade
             }
+            textViewResultado.text = "Faltam $resultado anos para você se aposentar."
         }
     }
 }
