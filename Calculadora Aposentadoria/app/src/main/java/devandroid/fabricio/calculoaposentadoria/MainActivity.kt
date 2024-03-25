@@ -21,7 +21,7 @@ class MainActivity: Activity(){
         val buttonCalcular = findViewById<Button>(R.id.button_calcular)
         //acessando o texto de resultado
         val textViewResultado = findViewById<TextView>(R.id.text_view_resultado)
-
+        //criando os itens da lista de sexo
         val adapter = ArrayAdapter(
             this,
             android.R.layout.simple_spinner_dropdown_item,
@@ -32,6 +32,18 @@ class MainActivity: Activity(){
             listOf("masculino", "feminino"))
         spinnerSexo.adapter = adapter
 
+        buttonCalcular.setOnClickListener {
+            //aqui vai o código que será executado quando houver um cliqu e do botão
+            val sexoSelecionado = spinnerSexo.selectedItem as String
 
+            val idade = editTexteIdade.text.toString().toInt()
+
+            var resultado = 0
+            if (sexoSelecionado == "masculino") {
+                resultado = 65 - idade
+            } else {
+                resultado = 62 - idade
+            }
+        }
     }
 }
