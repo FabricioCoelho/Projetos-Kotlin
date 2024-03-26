@@ -31,9 +31,9 @@ class MainActivity: Activity(){
             .simple_spinner_dropdown_item,
             listOf("masculino", "feminino"))
         spinnerSexo.adapter = adapter
-
+        //Ação para o butão funcionar quando clicar 
         buttonCalcular.setOnClickListener {
-            //aqui vai o código que será executado quando houver um cliqu e do botão
+            //aqui vai o código que será executado quando houver um clique do botão
             val sexoSelecionado = spinnerSexo.selectedItem as String
 
             val idade = editTexteIdade.text.toString().toInt()
